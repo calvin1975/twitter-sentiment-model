@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+<title>Sentiment analysis model</title>
+</head>
+
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        Tweet (English only):
+        <input name="text" type="text" required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+        <br> Your input tweet text is:
+        <p style="font-size:25px">{{original_input}}</p>
+    	Predicted sentiment is :
+   		<p style="font-size:50px">{{ result }}</p>
+</div>
+
+</html>
